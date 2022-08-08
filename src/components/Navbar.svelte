@@ -6,7 +6,7 @@
     <div class="logo">
         <Logo/>
     </div>
-    <ul class="primary-navigation" id="primary-navigation">
+    <ul>
         <li class="active">
             <a href="/">
                 <span aria-hidden="true">00</span>Home
@@ -31,22 +31,10 @@
 </nav>
 
 <style lang="postcss">
-    nav ul {
+    nav {
         display: flex;
-    }
-
-    .logo {
-        margin: 2rem;
-    }
-
-    .nav-container {
+        justify-content: space-around;
         align-items: center;
-        justify-content: space-between;
-    }
-
-    .primary-navigation {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        min-height: 8vh;
     }
 </style>
