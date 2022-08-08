@@ -5,7 +5,3 @@
 
 <Navbar/>
 <slot></slot>
-
-<style global lang="postcss">
-    @import-glob "$styles/**/*.pcss";
-</style>

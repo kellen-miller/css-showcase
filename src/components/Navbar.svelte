@@ -2,11 +2,11 @@
     import Logo from "$lib/icons/Logo.svelte";
 </script>
 
-<nav class="nav-container flex">
+<nav class="nav-container">
     <div class="logo">
         <Logo/>
     </div>
-    <ul class="primary-navigation flex" id="primary-navigation">
+    <ul class="primary-navigation" id="primary-navigation">
         <li class="active">
             <a href="/">
                 <span aria-hidden="true">00</span>Home
@@ -31,6 +31,10 @@
 </nav>
 
 <style lang="postcss">
+    nav ul {
+        display: flex;
+    }
+
     .logo {
         margin: 2rem;
     }
@@ -41,8 +45,8 @@
     }
 
     .primary-navigation {
-        @apply p-0;
-        @apply m-0;
+        padding: 0;
+        margin: 0;
         list-style: none;
     }
 </style>
