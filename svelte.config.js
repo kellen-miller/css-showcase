@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-auto";
+import adapter from "@sveltejs/adapter-static";
 import preprocess from "svelte-preprocess";
 import switchCase from "svelte-switch-case";
 
@@ -11,7 +11,8 @@ const config = {
     switchCase()
   ],
   kit: {
-    adapter: adapter()
+	  adapter: adapter(),
+	  prerender: { default: true }
   }
 };
 
