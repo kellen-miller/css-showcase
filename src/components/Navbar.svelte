@@ -16,7 +16,7 @@
         <IconWrapper
               aspectRatio="1"
               height="3rem"
-              icon={"rocket"}
+              icon={logo}
               transition="fade"
         />
     </div>
@@ -87,11 +87,6 @@
             }
         }
 
-        .closed & {
-            display: none;
-            transform: translateX(100%);
-        }
-
         @media (max-width: 35em) {
             --gap: 2rem;
             position: fixed;
@@ -108,6 +103,10 @@
             padding-block: 1.25rem;
             padding-inline: clamp(3rem, 10vw, 10rem);
         }
+    }
+
+    .closed {
+        transform: translateX(100%);
     }
 
     .logo {

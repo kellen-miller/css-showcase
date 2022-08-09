@@ -7,7 +7,7 @@
     export let width: string;
     export let aspectRatio: string;
     export let transition: keyof typeof transitions;
-    export let transitionProps: any = {};
+    export let transitionProps: any;
 
 </script>
 
