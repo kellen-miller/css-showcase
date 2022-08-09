@@ -1,40 +1,121 @@
 <script lang="ts">
-    import Logo from "$lib/icons/Logo.svelte";
+    import Rocket from "$lib/icons/Rocket.svelte";
+    import Menu from "$lib/icons/Menu.svelte";
+    import Remove from "$lib/icons/Remove.svelte";
+
+    let menuOpen = false;
+
+    function handleClick() {
+        menuOpen = !menuOpen;
+    }
 </script>
 
-<nav class="nav-container">
+<header class="header-container flex">
     <div class="logo">
-        <Logo/>
+        <Rocket/>
     </div>
-    <ul>
-        <li class="active">
-            <a href="/">
-                <span aria-hidden="true">00</span>Home
-            </a>
-        </li>
-        <li>
-            <a href="/">
-                <span aria-hidden="true">01</span>Destination
-            </a>
-        </li>
-        <li>
-            <a href="/">
-                <span aria-hidden="true">02</span>Crew
-            </a>
-        </li>
-        <li>
-            <a href="/">
-                <span aria-hidden="true">03</span>Technology
-            </a>
-        </li>
-    </ul>
-</nav>
+
+    <button aria-controls="nav-links"
+            aria-expanded={menuOpen}
+            class="mobile-nav-toggle" on:click={handleClick}>
+        <span class="sr-only">Menu</span>
+        <svelte:component this={menuOpen ? Remove : Menu}/>
+    </button>
+
+    <nav>
+        <ul class="nav-links flex" class:menuOpen
+            id="nav-links">
+            <li>
+                <a href="/">
+                    <span aria-hidden="true">00</span>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <span aria-hidden="true">01</span>
+                    Destination
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <span aria-hidden="true">02</span>
+                    Crew
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <span aria-hidden="true">03</span>
+                    Technology
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <style lang="postcss">
-    nav {
-        display: flex;
-        justify-content: space-around;
+
+    .header-container {
+        height: 10vh;
+        width: 100%;
+        margin-top: 10px;
         align-items: center;
-        min-height: 8vh;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-toggle {
+        display: none;
+
+        @media (max-width: 35em) {
+            display: block;
+            position: absolute;
+            z-index: 9999;
+            width: 2rem;
+            aspect-ratio: 1;
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+
+    .nav-links {
+        background-color: hsl(0, 0%, 100%, .1);
+        backdrop-filter: blur(1rem);
+        font-size: 18px;
+
+        & span[aria-hidden=true] {
+            font-weight: bold;
+            margin-inline-end: .5em;
+
+            @media (min-width: 35em) and (max-width: 55em) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 35em) {
+            --gap: 2rem;
+            position: fixed;
+            z-index: 1000;
+            inset: 0 0 0 30%;
+            flex-direction: column;
+            padding: min(30vh, 10rem) 2em;
+            transform: translateX(100%);
+            transition: transform 350ms ease-out;
+        }
+
+        @media (min-width: 35em) {
+            --gap: clamp(1.5rem, 5vw, 3rem);
+            padding-block: 1.25rem;
+            padding-inline: clamp(3rem, 10vw, 10rem);
+        }
+    }
+
+    .logo {
+        margin: 2rem;
+        height: 3rem;
+        aspect-ratio: 1;
+    }
+
+    .menuOpen {
+        transform: translateX(0);
     }
 </style>
