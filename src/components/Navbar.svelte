@@ -2,11 +2,12 @@
     import Rocket from "$lib/icons/Rocket.svelte";
     import Menu from "$lib/icons/Menu.svelte";
     import Remove from "$lib/icons/Remove.svelte";
+    import {links} from "$components/nav-links.ts";
 
-    let menuOpen = false;
+    let closed = true;
 
     function handleClick() {
-        menuOpen = !menuOpen;
+        closed = !closed;
     }
 </script>
 
@@ -16,39 +17,28 @@
     </div>
 
     <button aria-controls="nav-links"
-            aria-expanded={menuOpen}
+            aria-expanded={closed}
             class="mobile-nav-toggle" on:click={handleClick}>
         <span class="sr-only">Menu</span>
-        <svelte:component this={menuOpen ? Remove : Menu}/>
+        <svelte:component this={closed ? Menu : Remove}/>
     </button>
 
     <nav>
-        <ul class="nav-links flex" class:menuOpen
+        <ul class="nav-links flex"
+            class:closed
             id="nav-links">
-            <li>
-                <a href="/">
-                    <span aria-hidden="true">00</span>
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <span aria-hidden="true">01</span>
-                    Destination
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <span aria-hidden="true">02</span>
-                    Crew
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <span aria-hidden="true">03</span>
-                    Technology
-                </a>
-            </li>
+
+            {#each links as link, i}
+                <li>
+                    <a href={link.href}>
+                        <span aria-hidden="true">0{i}</span>
+                        {link.name}
+                        <div class="icon">
+                            <svelte:component this={link.icon}/>
+                        </div>
+                    </a>
+                </li>
+            {/each}
         </ul>
     </nav>
 </header>
@@ -91,6 +81,13 @@
             }
         }
 
+        & li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
         @media (max-width: 35em) {
             --gap: 2rem;
             position: fixed;
@@ -98,7 +95,7 @@
             inset: 0 0 0 30%;
             flex-direction: column;
             padding: min(30vh, 10rem) 2em;
-            transform: translateX(100%);
+            transform: translateX(0);
             transition: transform 350ms ease-out;
         }
 
@@ -115,7 +112,12 @@
         aspect-ratio: 1;
     }
 
-    .menuOpen {
-        transform: translateX(0);
+    .closed {
+        transform: translateX(100%);
+    }
+
+    .icon {
+        height: 2rem;
+        aspect-ratio: 1;
     }
 </style>
