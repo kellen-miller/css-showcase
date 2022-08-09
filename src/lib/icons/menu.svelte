@@ -1,4 +1,4 @@
-<svg height="inherit" viewBox="0 0 24 24" width="inherit" xmlns="http://www.w3.org/2000/svg">
+<svg height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="currentColor" strokeDasharray="24" strokeDashoffset="24" strokeLinecap="round"
        strokeWidth="2">
         <path d="M5 5H19">

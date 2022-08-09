@@ -1,4 +1,4 @@
-<svg height="inherit" viewBox="0 0 128 128" width="inherit" xmlns="http://www.w3.org/2000/svg">
+<svg height="100%" viewBox="0 0 128 128" width="100%" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <path d="M0 0h128v128H0z" id="IconifyId182828bf7b13e2e7e451"></path>
     </defs>

@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Rocket from "$lib/icons/Rocket.svelte";
-    import Menu from "$lib/icons/Menu.svelte";
-    import Remove from "$lib/icons/Remove.svelte";
-    import {links} from "$components/nav-links.ts";
+    import {menu} from "$lib/icons";
+    import IconWrapper from "$components/IconWrapper.svelte";
+    import {links} from "$data/nav-links.ts";
 
+    const logo = "rocket";
     let closed = true;
 
     function handleClick() {
@@ -11,31 +11,31 @@
     }
 </script>
 
-<header class="header-container flex">
+<header>
     <div class="logo">
-        <Rocket/>
+        <IconWrapper
+              aspectRatio="1"
+              height="3rem"
+              icon={"rocket"}
+              transition="fade"
+        />
     </div>
 
     <button aria-controls="nav-links"
             aria-expanded={closed}
-            class="mobile-nav-toggle" on:click={handleClick}>
+            on:click={handleClick}>
         <span class="sr-only">Menu</span>
-        <svelte:component this={closed ? Menu : Remove}/>
+        <IconWrapper icon={closed ? "menu" : "remove"} transition="fade"/>
     </button>
 
     <nav>
-        <ul class="nav-links flex"
-            class:closed
-            id="nav-links">
-
+        <ul class:closed>
             {#each links as link, i}
                 <li>
                     <a href={link.href}>
                         <span aria-hidden="true">0{i}</span>
                         {link.name}
-                        <div class="icon">
-                            <svelte:component this={link.icon}/>
-                        </div>
+                        <IconWrapper icon={link.icon} height="2rem" aspectRatio="1"/>
                     </a>
                 </li>
             {/each}
@@ -44,8 +44,13 @@
 </header>
 
 <style lang="postcss">
+    @define-mixin flex $gap: 1em {
+        display: flex;
+        gap: var(--gap, $gap);
+    }
 
-    .header-container {
+    header {
+        @mixin flex;
         height: 10vh;
         width: 100%;
         margin-top: 10px;
@@ -53,21 +58,22 @@
         justify-content: space-between;
     }
 
-    .mobile-nav-toggle {
-        display: none;
+    button {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
 
-        @media (max-width: 35em) {
-            display: block;
-            position: absolute;
-            z-index: 9999;
-            width: 2rem;
-            aspect-ratio: 1;
-            top: 2rem;
-            right: 2rem;
+        @media (min-width: 35em) {
+            display: none;
         }
     }
 
-    .nav-links {
+    ul {
+        @mixin flex;
         background-color: hsl(0, 0%, 100%, .1);
         backdrop-filter: blur(1rem);
         font-size: 18px;
@@ -81,11 +87,9 @@
             }
         }
 
-        & li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: nowrap;
+        .closed & {
+            display: none;
+            transform: translateX(100%);
         }
 
         @media (max-width: 35em) {
@@ -108,16 +112,5 @@
 
     .logo {
         margin: 2rem;
-        height: 3rem;
-        aspect-ratio: 1;
-    }
-
-    .closed {
-        transform: translateX(100%);
-    }
-
-    .icon {
-        height: 2rem;
-        aspect-ratio: 1;
     }
 </style>
