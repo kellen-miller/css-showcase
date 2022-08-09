@@ -35,7 +35,9 @@
                     <a href={link.href}>
                         <span aria-hidden="true">0{i}</span>
                         {link.name}
-                        <IconWrapper icon={link.icon} height="2rem" aspectRatio="1"/>
+                        <div class="icon">
+                            <IconWrapper icon={link.icon} height="2rem" aspectRatio="1"/>
+                        </div>
                     </a>
                 </li>
             {/each}
@@ -76,7 +78,7 @@
         @mixin flex;
         background-color: hsl(0, 0%, 100%, .1);
         backdrop-filter: blur(1rem);
-        font-size: 18px;
+        font-size: 24px;
 
         & span[aria-hidden=true] {
             font-weight: bold;
@@ -103,6 +105,16 @@
             padding-block: 1.25rem;
             padding-inline: clamp(3rem, 10vw, 10rem);
         }
+    }
+
+    li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon {
+        margin-left: .5em;
     }
 
     .closed {
