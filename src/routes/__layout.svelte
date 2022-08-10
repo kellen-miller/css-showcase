@@ -16,6 +16,6 @@
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 </style>
