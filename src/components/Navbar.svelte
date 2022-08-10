@@ -4,10 +4,10 @@
     import {links} from "$data/nav-links.ts";
 
     const logo = "rocket";
-    let closed = true;
+    let expanded = true;
 
     function handleClick() {
-        closed = !closed;
+        expanded = !expanded;
     }
 </script>
 
@@ -22,14 +22,14 @@
     </div>
 
     <button aria-controls="nav-links"
-            aria-expanded={closed}
+            aria-expanded={expanded}
             on:click={handleClick}>
         <span class="sr-only">Menu</span>
-        <IconWrapper icon={closed ? "menu" : "remove"} transition="fade"/>
+        <IconWrapper icon={expanded ? "remove" : "menu"} transition="fade"/>
     </button>
 
     <nav>
-        <ul class:closed>
+        <ul class:expanded>
             {#each links as link, i}
                 <li>
                     <a href={link.href}>
@@ -53,8 +53,9 @@
 
     header {
         @mixin flex;
-        height: 10vh;
-        width: 100%;
+        height: var(--header-height);
+        width: 100vw;
+        color: hsl(0, 0%, 95%);
         margin-top: 10px;
         align-items: center;
         justify-content: space-between;
@@ -96,7 +97,7 @@
             inset: 0 0 0 30%;
             flex-direction: column;
             padding: min(30vh, 10rem) 2em;
-            transform: translateX(0);
+            transform: translateX(100%);
             transition: transform 350ms ease-out;
         }
 
@@ -114,11 +115,11 @@
     }
 
     .icon {
-        margin-left: .5em;
+        margin-left: .25em;
     }
 
-    .closed {
-        transform: translateX(100%);
+    .expanded {
+        transform: translateX(0%);
     }
 
     .logo {

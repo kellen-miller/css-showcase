@@ -3,6 +3,12 @@
 @import "styles/tailwind.pcss";
 
 @layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
     html {
         font-family: "Poppins", sans-serif;
     }

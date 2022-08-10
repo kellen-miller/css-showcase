@@ -10,8 +10,8 @@
 
 <style global lang="postcss">
     body {
-        color: hsl(0, 0%, 90%);
-        background-image: url("/images/background.jpg");
+        line-height: 1.6;
+        background-image: url("https://source.unsplash.com/random/3840x2160/?space");
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
