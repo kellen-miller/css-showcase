@@ -46,6 +46,10 @@
 </header>
 
 <style lang="postcss">
+    @custom-media --mobile-vp-min (min-width: 35em);
+
+    @custom-media --small-vp-max (max-width: 57em);
+
     @define-mixin flex $gap: 1em {
         display: flex;
         gap: var(--gap, $gap);
@@ -56,7 +60,7 @@
         height: var(--header-height);
         width: 100vw;
         color: hsl(0, 0%, 95%);
-        margin-top: 10px;
+        padding-top: 10px;
         align-items: center;
         justify-content: space-between;
     }
@@ -70,41 +74,43 @@
         top: 2rem;
         right: 2rem;
 
-        @media (min-width: 35em) {
+        @media (--mobile-vp-min) {
             display: none;
         }
     }
 
     ul {
         @mixin flex;
+        flex-direction: column;
+        --gap: 2rem;
         background-color: hsl(0, 0%, 100%, .1);
         backdrop-filter: blur(1rem);
-        font-size: 24px;
+        font-size: 1.25rem;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        padding: min(30vh, 10rem) 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
 
         & span[aria-hidden=true] {
             font-weight: bold;
             margin-inline-end: .5em;
 
-            @media (min-width: 35em) and (max-width: 55em) {
+            @media (--mobile-vp-min) and (--small-vp-max) {
                 display: none;
             }
         }
 
-        @media (max-width: 35em) {
-            --gap: 2rem;
-            position: fixed;
-            z-index: 1000;
-            inset: 0 0 0 30%;
-            flex-direction: column;
-            padding: min(30vh, 10rem) 2em;
-            transform: translateX(100%);
-            transition: transform 350ms ease-out;
-        }
-
-        @media (min-width: 35em) {
-            --gap: clamp(1.5rem, 5vw, 3rem);
+        @media (--mobile-vp-min) {
+            position: static;
+            flex-direction: row;
+            transform: translateX(0);
+            inset: auto;
+            transition: none;
+            --gap: clamp(1rem, 5vw, 3rem);
             padding-block: 1.25rem;
-            padding-inline: clamp(3rem, 10vw, 10rem);
+            padding-inline: clamp(3rem, 6vw, 9rem);
         }
     }
 

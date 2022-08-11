@@ -3,7 +3,7 @@
     import Navbar from "$components/Navbar.svelte";
 </script>
 
-<div class="shell">
+<div class="app-container">
     <Navbar/>
     <slot></slot>
 </div>
