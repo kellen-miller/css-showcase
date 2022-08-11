@@ -4,7 +4,7 @@
     import {links} from "$data/nav-links.ts";
 
     const logo = "rocket";
-    let expanded = true;
+    let expanded = false;
 
     function handleClick() {
         expanded = !expanded;

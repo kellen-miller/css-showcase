@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@faker-js/faker': ^7.4.0
   '@square/svelte-store': ^0.2.0
   '@sveltejs/adapter-auto': 1.0.0-next.64
   '@sveltejs/adapter-static': 1.0.0-next.39
@@ -16,7 +17,6 @@ specifiers:
   postcss-mixins: ^9.0.3
   postcss-normalize: ^10.0.1
   postcss-preset-env: ^7.7.2
-  postcss-simple-vars: ^6.0.3
   svelte: ^3.49.0
   svelte-check: ^2.8.0
   svelte-preprocess: ^4.10.7
@@ -30,6 +30,7 @@ dependencies:
   postcss: 8.4.16
 
 devDependencies:
+  '@faker-js/faker': 7.4.0
   '@square/svelte-store': 0.2.0
   '@sveltejs/adapter-auto': 1.0.0-next.64
   '@sveltejs/adapter-static': 1.0.0-next.39
@@ -44,7 +45,6 @@ devDependencies:
   postcss-mixins: 9.0.3_postcss@8.4.16
   postcss-normalize: 10.0.1_mu2kzpkteq3ketk6piffleamkq
   postcss-preset-env: 7.7.2_postcss@8.4.16
-  postcss-simple-vars: 6.0.3_postcss@8.4.16
   svelte: 3.49.0
   svelte-check: 2.8.0_jdlgeekmku2qqutpgkpzsjkume
   svelte-preprocess: 4.10.7_fdoxwe2egddcaol3eor2pxtoqq
@@ -1412,6 +1412,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@faker-js/faker/7.4.0:
+    resolution: { integrity: sha512-xDd3Tvkt2jgkx1LkuwwxpNBy/Oe+LkZBTwkgEFTiWpVSZgQ5sc/LenbHKRHbFl0dq/KFeeq/szyyPtpJRKY0fg== }
+    engines: { node: '>=14.0.0', npm: '>=6.0.0' }
+    dev: true
 
   /@iarna/toml/2.2.5:
     resolution: { integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg== }

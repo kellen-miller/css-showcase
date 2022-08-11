@@ -36,7 +36,6 @@
 <style lang="postcss">
     :root {
         --clr-neutral-900: hsl(207, 19%, 9%);
-        --clr-neutral-100: hsl(0, 0%, 95%);
         --clr-accent-400: hsl(267, 86%, 54%);
         --padding: 1.5rem;
         --scale: 1;
@@ -122,7 +121,7 @@
     }
 
     p {
-        color: hsl(0, 0%, 95%, .9)
+        color: var(--clr-neutral-100);
     }
 
     a {
@@ -135,18 +134,6 @@
 
         &:hover, &:focus, &:active {
             background-color: var(--clr-neutral-100);
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-            animation-duration: .01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: .01ms !important;
-            transition-delay: .01ms !important;
-            scroll-behavior: auto !important;
         }
     }
 </style>
