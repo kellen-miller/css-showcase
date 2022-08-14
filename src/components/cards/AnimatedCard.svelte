@@ -35,15 +35,15 @@
 
 <style lang="postcss">
     :root {
-        --clr-neutral-900: hsl(207, 19%, 9%);
-        --clr-accent-400: hsl(267, 86%, 54%);
+        --clr-neutral-900: 207, 19%, 9%;
+        --clr-accent-400: 267, 86%, 54%;
         --padding: 1.5rem;
         --scale: 1;
         --animate-duration: 500ms;
     }
 
     .card {
-        color: var(--clr-neutral-100);
+        color: hsl(var(--clr-neutral-100));
         background-image: var(--random-image-url);
         background-size: cover;
         padding: 10rem 0 0 0;
@@ -105,7 +105,7 @@
             height: 4px;
             left: calc(-1 * var(--padding));
             bottom: -2px;
-            background-color: var(--clr-accent-400);
+            background-color: hsl(var(--clr-accent-400));;
             border-radius: 1px;
             transform-origin: left;
             transition: transform var(--animate-duration) ease;
@@ -121,19 +121,19 @@
     }
 
     p {
-        color: var(--clr-neutral-100);
+        color: hsl(var(--clr-neutral-100));
     }
 
     a {
         cursor: pointer;
         display: inline;
-        color: var(--clr-neutral-900);
-        background-color: var(--clr-accent-400);
+        color: hsl(var(--clr-neutral-900));
+        background-color: hsl(var(--clr-accent-400));;
         padding: .35em 1em;
         border-radius: .25em;
 
         &:hover, &:focus, &:active {
-            background-color: var(--clr-neutral-100);
+            background-color: hsl(var(--clr-neutral-100));
         }
     }
 </style>

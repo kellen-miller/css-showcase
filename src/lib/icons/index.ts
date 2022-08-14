@@ -1,8 +1,19 @@
-export {default as astronaut} from "./astronaut.svelte";
-export {default as dna} from "./dna.svelte";
-export {default as globe} from "./globe.svelte";
-export {default as menu} from "./menu.svelte";
-export {default as planet} from "./planet.svelte";
-export {default as remove} from "./remove.svelte";
-export {default as rocket} from "./rocket.svelte";
-export {default as notFound} from "./not-found.svelte";
+import astronaut from "./astronaut.svelte";
+import dna from "./dna.svelte";
+import globe from "./globe.svelte";
+import menu from "./menu.svelte";
+import planet from "./planet.svelte";
+import remove from "./remove.svelte";
+import rocket from "./rocket.svelte";
+import notFound from "./not-found.svelte";
+
+export {
+    astronaut,
+    dna,
+    globe,
+    menu,
+    planet,
+    remove,
+    rocket,
+    notFound
+}

@@ -2,13 +2,12 @@
     import * as icons from "$lib/icons";
     import * as transitions from "svelte/transition";
 
-    export let icon: string = "notFound";
-    export let height: string;
-    export let width: string;
-    export let aspectRatio: string;
-    export let transition: keyof typeof transitions;
-    export let transitionProps: any;
-
+    export let icon: keyof typeof icons;
+    export let height: string = "100%";
+    export let width: string = "100%";
+    export let aspectRatio: string = "1";
+    export let transition: keyof typeof transitions = undefined;
+    export let transitionProps: any = undefined;
 </script>
 
 <div style:aspect-ratio={aspectRatio}

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import {menu} from "$lib/icons";
     import IconWrapper from "$components/IconWrapper.svelte";
     import {links} from "$data/nav-links.ts";
 
@@ -108,9 +107,9 @@
             transform: translateX(0);
             inset: auto;
             transition: none;
-            --gap: clamp(1rem, 5vw, 3rem);
+            --gap: clamp(1rem, 3vw, 3rem);
             padding-block: 1.25rem;
-            padding-inline: clamp(3rem, 6vw, 9rem);
+            padding-inline: clamp(1rem, 2vw, 9rem);
         }
     }
 

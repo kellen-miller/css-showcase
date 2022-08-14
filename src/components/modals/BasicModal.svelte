@@ -13,7 +13,7 @@
 
 <style lang="postcss">
     .modal-container {
-        background-color: var(--clr-neutral-100);
+        background-color: hsl(var(--clr-neutral-100));
         width: 20vw;
         aspect-ratio: .7;
     }

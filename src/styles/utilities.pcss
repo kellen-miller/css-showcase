@@ -1,9 +1,10 @@
 /* utilities */
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
+:root {
+    .flow > *:where(:not(:first-child)) {
+        margin-top: var(--flow-spacer, 1em);
+    }
 
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-spacer, 1em);
+    @define-mixin colored-shadow $hue, $saturation, $lightness, $alpha: 100% {
+        box-shadow: hsl($hue, $saturation, $lightness, $alpha) 0 4px 24px;
+    }
 }

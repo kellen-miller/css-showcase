@@ -1,16 +1,14 @@
 <script lang="ts">
-    import BasicModal from "$components/modals/BasicModal.svelte";
+    import ProductCard from "$components/cards/ProductCard.svelte";
 </script>
 <div class="main-container">
-    <BasicModal/>
+    <ProductCard/>
 </div>
 
-
-<style>
+<style lang="postcss">
     .main-container {
         display: grid;
         place-items: center;
         min-height: calc(100vh - var(--header-height));
-        place-items: center;
     }
 </style>

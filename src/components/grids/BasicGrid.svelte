@@ -23,7 +23,7 @@
         padding-block: 2rem;
         width: min(95%, 70rem);
         margin-inline: auto;
-        color: var(--clr-neutral-100);
+        color: hsl(var(--clr-neutral-100));
 
         @media (min-width: 35em) {
             display: grid;
@@ -46,7 +46,7 @@
         &:nth-child(4n + 1) {
             grid-area: card-1;
             color: hsl(0, 28%, 5%);
-            background-color: var(--clr-neutral-100);
+            background-color: hsl(var(--clr-neutral-100));
         }
 
         &:nth-child(4n + 2) {

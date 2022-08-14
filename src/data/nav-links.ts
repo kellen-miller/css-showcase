@@ -1,6 +1,7 @@
 import type * as icons from "$lib/icons";
+import {astronaut, dna, globe, planet} from "$lib/icons";
 
-interface NavLinkType {
+type NavLinkType = {
     name: string;
     href: string;
     icon: keyof typeof icons;
