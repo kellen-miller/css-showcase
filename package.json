@@ -24,6 +24,7 @@
     "dotenv": "^16.0.1",
     "lucia-sveltekit": "^0.6.1",
     "modern-normalize": "^1.1.0",
+    "postcss-at-rules-variables": "^0.3.0",
     "postcss-custom-media": "^8.0.2",
     "postcss-import": "^14.1.0",
     "postcss-load-config": "^4.0.1",

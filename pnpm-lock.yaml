@@ -12,6 +12,7 @@ specifiers:
   lucia-sveltekit: ^0.6.1
   modern-normalize: ^1.1.0
   postcss: ^8.4.14
+  postcss-at-rules-variables: ^0.3.0
   postcss-custom-media: ^8.0.2
   postcss-import: ^14.1.0
   postcss-load-config: ^4.0.1
@@ -41,6 +42,7 @@ devDependencies:
   dotenv: 16.0.1
   lucia-sveltekit: 0.6.1
   modern-normalize: 1.1.0
+  postcss-at-rules-variables: 0.3.0_postcss@8.4.16
   postcss-custom-media: 8.0.2_postcss@8.4.16
   postcss-import: 14.1.0_postcss@8.4.16
   postcss-load-config: 4.0.1_postcss@8.4.16
@@ -2867,6 +2869,15 @@ packages:
   /pify/4.0.1:
     resolution: { integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g== }
     engines: { node: '>=6' }
+    dev: true
+
+  /postcss-at-rules-variables/0.3.0_postcss@8.4.16:
+    resolution: { integrity: sha512-TmzLAG17XTsRYSqcpk96zXie+oU30Tn0F5f8mgSD3JagIAmhWUH7/3CLxY8XL8BhqiIjGiCSMuolIxwB4TE4NA== }
+    engines: { node: '>=10' }
+    peerDependencies:
+      postcss: ^8.1.10
+    dependencies:
+      postcss: 8.4.16
     dev: true
 
   /postcss-attribute-case-insensitive/5.0.2_postcss@8.4.16:

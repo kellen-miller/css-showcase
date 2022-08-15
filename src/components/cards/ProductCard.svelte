@@ -21,32 +21,34 @@
     }
 
     .card-container {
-        width: 18rem;
+        color: hsl(var(--foreground));
         background-color: hsl(var(--secondaryBg));
+        width: 18rem;
         display: flex;
         flex-direction: column;
         border-radius: var(--border-radius);
+
+        & > img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        & > .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            padding: 1rem;
+
+            > h2 {
+                font-weight: 700;
+            }
+
+            > p {
+                color: hsl(215, 28%, 17%, .8)
+            }
+        }
+
         @mixin colored-shadow var(--purple-500)
-    }
-
-    img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--border-radius) var(--border-radius) 0 0;
-    }
-
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-        padding: 1rem;
-    }
-
-    h2 {
-        font-weight: 700;
-    }
-
-    p {
-        color: hsl(215, 28%, 17%, .8)
     }
 </style>

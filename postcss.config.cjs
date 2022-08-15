@@ -1,5 +1,5 @@
 const postcssImport = require("postcss-import")
-const normalize = require("postcss-normalize")
+const atRulesVariables = require("postcss-at-rules-variables")
 const mixins = require("postcss-mixins")
 const customMedia = require("postcss-custom-media")
 const tailwindNesting = require("tailwindcss/nesting")
@@ -8,7 +8,13 @@ const postcssPresetEnv = require("postcss-preset-env");
 
 const config = {
 	plugins: [
-		postcssImport(normalize),
+		atRulesVariables({ atRules: ["mixins"] }),
+		postcssImport({
+			plugins: [
+				require("postcss-at-rules-variables"),
+				require("postcss-import")
+			]
+		}),
 		mixins,
 		customMedia,
 		tailwindNesting,
