@@ -1,6 +1,7 @@
 <script lang="ts">
     import IconWrapper from "$components/IconWrapper.svelte";
     import {links} from "$data/nav-links.ts";
+    import {setTheme, Theme, theme} from "$lib/stores/theme.ts";
 
     const logo = "rocket";
     let expanded = false;
@@ -8,16 +9,31 @@
     function handleClick() {
         expanded = !expanded;
     }
+
+    function handleThemeChange() {
+        setTheme($theme === Theme.Dark ? Theme.Light : Theme.Dark);
+    }
 </script>
 
 <header>
-    <div class="logo">
-        <IconWrapper
-              aspectRatio="1"
-              height="3rem"
-              icon={logo}
-              transition="fade"
-        />
+    <div class="left-icons">
+        <div class="logo">
+            <IconWrapper
+                  aspectRatio="1"
+                  height="3rem"
+                  icon={logo}
+                  transition="fade"
+            />
+        </div>
+        <div
+              on:click={handleThemeChange}
+        >
+            <IconWrapper
+                  height="2rem"
+                  icon={$theme === "light" ? "moon" : "sun"}
+                  transition="fade"
+            />
+        </div>
     </div>
 
     <button aria-controls="nav-links"
@@ -62,6 +78,13 @@
         padding-top: 10px;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .left-icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
     }
 
     button {
@@ -125,9 +148,5 @@
 
     .expanded {
         transform: translateX(0%);
-    }
-
-    .logo {
-        margin: 2rem;
     }
 </style>

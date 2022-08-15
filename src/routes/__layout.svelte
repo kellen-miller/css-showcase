@@ -1,9 +1,10 @@
 <script lang="ts">
     import "@/app.pcss";
     import Navbar from "$components/Navbar.svelte";
+    import {theme} from "$lib/stores/theme.ts";
 </script>
 
-<div class="app-container">
+<div class="app-container {$theme}">
     <Navbar/>
     <slot></slot>
 </div>

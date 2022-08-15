@@ -4,7 +4,7 @@
         margin-top: var(--flow-spacer, 1em);
     }
 
-    @define-mixin colored-shadow $hue, $saturation, $lightness, $alpha: 100% {
+    @define-mixin colored-shadow $hue: 0%, $saturation: 0%, $lightness: 100%, $alpha: 100% {
         box-shadow: hsl($hue, $saturation, $lightness, $alpha) 0 4px 24px;
     }
 }
