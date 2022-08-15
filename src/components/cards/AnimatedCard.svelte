@@ -3,8 +3,8 @@
 
     let animateDuration = 500;
     let scale = spring(1, {
-        stiffness: .2,
-        damping: .15
+        stiffness: .3,
+        damping: .4
     })
 
     $: style = `
@@ -127,7 +127,7 @@
     a {
         cursor: pointer;
         display: inline;
-        color: hsl(var(--clr-neutral-900));
+        color: hsl(0, 0%, 98%);
         background-color: hsl(var(--clr-accent-400));;
         padding: .35em 1em;
         border-radius: .25em;

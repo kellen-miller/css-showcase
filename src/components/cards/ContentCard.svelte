@@ -31,6 +31,8 @@
     }
 
     article {
+        background-color: hsl(var(--background));
+        max-width: 18rem;
         font-size: 0.8125rem;
         padding: 2rem;
         border-radius: 0.5rem;

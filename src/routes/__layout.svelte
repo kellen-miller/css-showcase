@@ -20,7 +20,7 @@
 
     .app-container {
         color: hsl(var(--foreground));
-        background-color: hsl(var(--background));
+        background-color: hsl(var(--secondaryBg));
     }
 </style>
 <!--background-image: url("https://source.unsplash.com/random/3840x2160/?space");-->

@@ -18,12 +18,12 @@
 
     .card-container {
         color: hsl(var(--foreground));
-        background-color: hsl(var(--secondaryBg));
+        background-color: hsl(var(--background), 80%);
         width: 18rem;
         display: flex;
         flex-direction: column;
         border-radius: var(--border-radius);
-        box-shadow: rgba(66, 148, 110, 0.15) 0px 4px 24px;
+        box-shadow: hsl(var(--purple-500), 0.25) 0px 4px 24px;
 
         > img {
             width: 100%;
@@ -35,16 +35,31 @@
             display: flex;
             flex-direction: column;
             gap: .5rem;
+            align-items: center;
             padding: 1rem;
 
             > h2 {
+                font-size: 1.25rem;
                 font-weight: 700;
             }
 
             > p {
+                font-size: .875rem;
+                flex-grow: 1;
                 opacity: .8;
             }
-        }
 
+            > button {
+                align-self: flex-end;
+                color: hsl(0, 0%, 98%);
+                background-color: hsl(var(--purple-500));
+                border-radius: calc(var(--border-radius) / 2);
+                padding: .5rem;
+                font-size: .8rem;
+                font-weight: 600;
+                cursor: pointer;
+                display: inline-flex;
+            }
+        }
     }
 </style>
