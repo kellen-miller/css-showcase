@@ -9,14 +9,18 @@
     <slot></slot>
 </div>
 
-<style global lang="postcss">
-    body {
-        line-height: 1.6;
-        background-image: url("https://source.unsplash.com/random/3840x2160/?space");
+<style lang="postcss">
+    .app-container {
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
         overflow-x: hidden;
     }
+
+    .app-container {
+        color: hsl(var(--foreground));
+        background-color: hsl(var(--background));
+    }
 </style>
+<!--background-image: url("https://source.unsplash.com/random/3840x2160/?space");-->

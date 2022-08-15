@@ -16,10 +16,6 @@
         --border-radius: 1rem;
     }
 
-    @define-mixin colored-shadow $hue, $saturation, $lightness, $alpha: 100% {
-        box-shadow: hsl($hue, $saturation, $lightness, $alpha) 0 4px 24px;
-    }
-
     .card-container {
         color: hsl(var(--foreground));
         background-color: hsl(var(--secondaryBg));
@@ -27,14 +23,15 @@
         display: flex;
         flex-direction: column;
         border-radius: var(--border-radius);
+        box-shadow: rgba(66, 148, 110, 0.15) 0px 4px 24px;
 
-        & > img {
+        > img {
             width: 100%;
             object-fit: cover;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        & > .card-content {
+        > .card-content {
             display: flex;
             flex-direction: column;
             gap: .5rem;
@@ -45,10 +42,9 @@
             }
 
             > p {
-                color: hsl(215, 28%, 17%, .8)
+                opacity: .8;
             }
         }
 
-        @mixin colored-shadow var(--purple-500)
     }
 </style>

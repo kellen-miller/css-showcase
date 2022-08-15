@@ -74,10 +74,10 @@
         @mixin flex;
         height: var(--header-height);
         width: 100vw;
-        color: hsl(0, 0%, 95%);
         padding-top: 10px;
         align-items: center;
         justify-content: space-between;
+        color: hsl(var(--foreground));
     }
 
     .left-icons {
@@ -105,7 +105,6 @@
         @mixin flex;
         flex-direction: column;
         --gap: 2rem;
-        background-color: hsl(0, 0%, 100%, .1);
         backdrop-filter: blur(1rem);
         font-size: 1.25rem;
         position: fixed;
@@ -114,11 +113,11 @@
         padding: min(30vh, 10rem) 2em;
         transform: translateX(100%);
         transition: transform 350ms ease-out;
+        background-color: hsl(var(--foreground), .1);
 
         & span[aria-hidden=true] {
             font-weight: bold;
             margin-inline-end: .5em;
-
             @media (--mobile-vp-min) and (--small-vp-max) {
                 display: none;
             }
@@ -140,10 +139,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
 
     .icon {
         margin-left: .25em;
+
     }
 
     .expanded {
