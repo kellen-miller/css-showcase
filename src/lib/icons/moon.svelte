@@ -1,4 +1,4 @@
-<svg height="100%" viewBox="0 0 24 24" width="100%">
+<svg height="1em" viewBox="0 0 24 24" width="1em">
     <g fill="currentColor" fillOpacity="0">
         <path d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
             <animate attributeName="fill-opacity" begin="0.7s" dur="0.4s" fill="freeze" values="0;1"></animate>
@@ -11,7 +11,7 @@
         <path d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"
               fill="currentColor" strokeDasharray="56" strokeDashoffset="56">
             <animate attributeName="stroke-dashoffset" dur="0.6s" fill="freeze" values="56;0"></animate>
-            <animate attributeName="fill-opacity" begin="1.5s" dur="0.15s" fill="freeze" values="0;0.3"></animate>
+            <animate attributeName="fill-opacity" begin="1.5s" dur="0.5s" fill="freeze" values="0;1"></animate>
         </path>
     </g>
 </svg>
