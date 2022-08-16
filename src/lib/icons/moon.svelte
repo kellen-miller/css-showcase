@@ -1,4 +1,4 @@
-<svg height="1em" viewBox="0 0 24 24" width="1em">
+<svg height="100%" style="color: inherit" viewBox="0 0 24 24" width="100%">
     <g fill="currentColor" fillOpacity="0">
         <path d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
             <animate attributeName="fill-opacity" begin="0.7s" dur="0.4s" fill="freeze" values="0;1"></animate>

@@ -18,21 +18,11 @@
 <header>
     <div class="left-icons">
         <div class="logo">
-            <IconWrapper
-                  aspectRatio="1"
-                  height="3rem"
-                  icon={logo}
-                  transition="fade"
-            />
+            <IconWrapper height="3rem" icon={logo}/>
         </div>
-        <div
-              on:click={handleThemeChange}
-        >
-            <IconWrapper
-                  height="2rem"
-                  icon={$theme === "light" ? "moon" : "sun"}
-                  transition="fade"
-            />
+
+        <div on:click={handleThemeChange}>
+            <IconWrapper height="2rem" icon={$theme === Theme.Light ? "moon" : "sun"}/>
         </div>
     </div>
 
@@ -40,7 +30,7 @@
             aria-expanded={expanded}
             on:click={handleClick}>
         <span class="sr-only">Menu</span>
-        <IconWrapper icon={expanded ? "remove" : "menu"} transition="fade"/>
+        <IconWrapper icon={expanded ? "remove" : "menu"}/>
     </button>
 
     <nav>
@@ -51,7 +41,7 @@
                         <span aria-hidden="true">0{i}</span>
                         {link.name}
                         <div class="icon">
-                            <IconWrapper icon={link.icon} height="2rem" aspectRatio="1"/>
+                            <IconWrapper icon={link.icon} height="2rem"/>
                         </div>
                     </a>
                 </li>
@@ -144,7 +134,6 @@
 
     .icon {
         margin-left: .25em;
-
     }
 
     .expanded {

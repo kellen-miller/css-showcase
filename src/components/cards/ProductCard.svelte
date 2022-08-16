@@ -9,6 +9,12 @@
         <p>{faker.commerce.productDescription()}</p>
         <button>Learn More</button>
     </div>
+    <dialog class="modal" id="modal">
+        <h2>{faker.commerce.productAdjective()}</h2>
+        <p>{faker.commerce.productMaterial()}</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, voluptatibus.</p>
+        <button>close</button>
+    </dialog>
 </div>
 
 <style lang="postcss">
