@@ -79,9 +79,9 @@
                 transform: translateY(0%);
                 transition-delay: var(--animate-duration);
 
-                > *:not(h2) {
+                & > *:not(h2) {
                     opacity: 1;
-                    transition-delay: var(--animate-duration);
+                    transition-delay: calc(var(--animate-duration) * 1.5);
                 }
             }
 

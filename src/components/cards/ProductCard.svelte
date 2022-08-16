@@ -1,5 +1,22 @@
 <script lang="ts">
     import {faker} from "@faker-js/faker";
+    import {onMount} from "svelte";
+    import {clickOutside} from "$lib/shared/clickOutside";
+
+    let modal;
+
+    onMount(() => {
+        modal = document.querySelector("#modal");
+    })
+
+    function openModal() {
+        modal.showModal();
+    }
+
+    function closeModal() {
+        modal.close();
+    }
+
 </script>
 
 <div class="card-container">
@@ -7,13 +24,13 @@
     <div class="card-content">
         <h2>{faker.commerce.productName()}</h2>
         <p>{faker.commerce.productDescription()}</p>
-        <button>Learn More</button>
+        <button on:click={openModal}>Learn More</button>
     </div>
     <dialog class="modal" id="modal">
         <h2>{faker.commerce.productAdjective()}</h2>
         <p>{faker.commerce.productMaterial()}</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, voluptatibus.</p>
-        <button>close</button>
+        <button on:click={closeModal} on:clickoutside={closeModal} use:clickOutside>close</button>
     </dialog>
 </div>
 
@@ -54,18 +71,24 @@
                 flex-grow: 1;
                 opacity: .8;
             }
+        }
 
-            > button {
-                align-self: flex-end;
-                color: hsl(0, 0%, 98%);
-                background-color: hsl(var(--purple-500));
-                border-radius: calc(var(--border-radius) / 2);
-                padding: .5rem;
-                font-size: .8rem;
-                font-weight: 600;
-                cursor: pointer;
-                display: inline-flex;
+        .modal {
+            > h2 {
+                font-size: 1.25rem;
+                font-weight: 700;
             }
+        }
+
+        button {
+            align-self: flex-end;
+            color: hsl(0, 0%, 98%);
+            background-color: hsl(var(--purple-500));
+            border-radius: calc(var(--border-radius) / 2);
+            padding: .5rem;
+            font-size: .8rem;
+            font-weight: 600;
+            cursor: pointer;
         }
     }
 </style>
